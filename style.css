@@ -33,7 +33,6 @@ body{
 }
 
 div.button-container{
-    display: flex;
     flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
@@ -45,6 +44,14 @@ button{
     height: 33px;
     width: 33px;
     margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: bolder;
+    font-size: large;
+}
+
+button#enter{
+    width: fit-content;
 }
 
 h5{
