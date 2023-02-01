@@ -12,6 +12,19 @@ let subsequentOperator ;
     display();
 }*/
 
+function enter(){
+    if (isUserInputFloat){
+        initialOperator = userInputToFloat;
+        userInput.splice(0, userInput.length);
+        document.getElementById("number").innerHTML = userInput.join('');
+        return 0;
+    }
+    initialOperator = userInputToInt;
+    userInput.splice(0, userInput.length);
+    document.getElementById("number").innerHTML =  userInput.   join('');
+    return 0;
+}
+
 function remove(){
     userInput.pop();
     display();
@@ -85,7 +98,7 @@ function display(){
 
    if(isUserInputFloat == true){
         userInputToFloat = parseFloat(userInputToString)
-        document.getElementById("number").innerHTML = userInputToFloat;
+       document.getElementById("number").innerHTML = userInputToFloat;
         console.log("Here we are");
         return 0;
     } else{
