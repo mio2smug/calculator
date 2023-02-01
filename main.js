@@ -2,7 +2,26 @@
 let userInput = [];
 let userInputToString;
 let userInputToInt;
+let userInputToFloat;
+let isUserInputFloat = false;
+let initialOperator ;
+let subsequentOperator ; 
 
+/*function clear(){
+    userInput [0] = "0" ;
+    display();
+}*/
+
+function remove(){
+    userInput.pop();
+    display();
+}
+
+function pushPeriod(){
+    userInput.push(".");
+   // isUserInputFloat = true;
+    display();
+}
 
 function pushOne(){
     userInput.push("1");
@@ -55,8 +74,15 @@ function pushZero(){
 }
 
 function display(){
-    userInputToInt = userInput.join('');
-    document.getElementById("number").innerHTML = userInputToInt;
+   /* if(isUserInputFloat === true){
+        userInputToFloat = parseFloat(userInput.join(''))
+        document.getElementById("number").innerHTML = userInputToFloat;
+        console.log(typeof userInputToFloat);
+    }*/ 
+    userInputToString = userInput.join('');
+    userInputToInt = parseInt(userInput.join(''));
+    document.getElementById("number").innerHTML = userInputToString;
+    console.log(typeof userInputToString);
 }
 
 function addition(x,y){
