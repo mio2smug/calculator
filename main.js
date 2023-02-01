@@ -7,10 +7,10 @@ let isUserInputFloat = false;
 let initialOperator ;
 let subsequentOperator ; 
 
-/*function clear(){
-    userInput [0] = "0" ;
-    display();
-}*/
+function removeall(){
+    userInput.splice(0, userInput.length);
+    document.getElementById("number").innerHTML = userInput.join('');
+}
 
 function enter(){
     if (isUserInputFloat){
@@ -21,7 +21,7 @@ function enter(){
     }
     initialOperator = userInputToInt;
     userInput.splice(0, userInput.length);
-    document.getElementById("number").innerHTML =  userInput.   join('');
+    document.getElementById("number").innerHTML =  userInput.join('');
     return 0;
 }
 
