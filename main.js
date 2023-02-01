@@ -17,9 +17,16 @@ function remove(){
     display();
 }
 
+function pushNegative(){
+    userInput.push('-');
+    document.getElementById("neg").disabled = "disabled";
+    display();
+}
+
 function pushPeriod(){
     userInput.push('.');
-   // isUserInputFloat = true;
+    document.getElementById("float").disabled = "disabled";
+    isUserInputFloat = true;
     display();
 }
 
@@ -74,15 +81,18 @@ function pushZero(){
 }
 
 function display(){
-   /* if(isUserInputFloat === true){
-        userInputToFloat = parseFloat(userInput.join(''))
-        document.getElementById("number").innerHTML = userInputToFloat;
-        console.log(typeof userInputToFloat);
-    }*/ 
     userInputToString = userInput.join('');
-    userInputToInt = parseInt(userInput.join(''));
-    document.getElementById("number").innerHTML = userInputToString;
-    console.log(typeof userInputToString);
+
+   if(isUserInputFloat == true){
+        userInputToFloat = parseFloat(userInputToString)
+        document.getElementById("number").innerHTML = userInputToFloat;
+        console.log("Here we are");
+        return 0;
+    } else{
+    userInputToInt = parseInt(userInputToString);
+    document.getElementById("number").innerHTML = userInputToInt;
+    console.log("hello");
+    return 0;}
 }
 
 function addition(x,y){
