@@ -18,7 +18,7 @@ function remove(){
 }
 
 function pushPeriod(){
-    userInput.push(".");
+    userInput.push('.');
    // isUserInputFloat = true;
     display();
 }
