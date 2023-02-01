@@ -6,42 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-   <!-- <script src="main.js"></script> -->
+   <script src="main.js"></script> 
 </head>
 <body>
     <div class = "container">
         <div class = "display">
-            <h5>IT-48 Bootleg Edition <br> QWERTY Instruments</h5>
+            <h5>IT-48 Bootleg Edition <br> AMOGUS Instruments</h5>
         </div>
         <div class="screen">
-            <h1>5318008</h1>
+            <h1 id="number">5318008</h1>
         </div>
         <div class = "button-container">
-            <button id = "seven">7</button>
-            <button id = "eight">8</button>
-            <button id = "nine">9</button>
-            <button>÷</button>
+            <button id = "seven" onclick="pushSeven()">7</button>
+            <button id = "eight" onclick="pushEight()">8</button>
+            <button id = "nine" onclick="pushNine()">9</button>
+            <button id="divide">÷</button>
             <br>
-            <button id = "four">4</button>
-            <button id = "five">5</button>
-            <button id = "six">6</button>
-            <button>+</button>
+            <button id = "four" onclick="pushFour()">4</button>
+            <button id = "five" onclick="pushFive()">5</button>
+            <button id = "six" onclick="pushSix()">6</button>
+            <button id = "add">+</button>
             <br>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>-</button>
+            <button id="one" onclick="pushOne()">1</button>
+            <button id="two" onclick="pushTwo()">2</button>
+            <button id="three" onclick="pushThree()">3</button>
+            <button id="minus">-</button>
             <br>
-            <button>0</button>
-            <button>.</button>
-            <button>(-)</button>
-            <button>*</button>
+            <button id="zero" onclick="pushZero();">0</button>
+            <button id="float">.</button>
+            <button id ="neg">(-)</button>
+            <button id= "multiply">*</button>
             <br>
             <button id="enter">enter</button>
             <button id="clear">clear</button>
             <button id="del">Del</button>
-    
-            
         </div>
         <!--<div class = "display">
             
@@ -51,6 +49,6 @@
         </div>-->
 
     </div>
-<!--<script src="main.js"></script>-->
+<script src="main.js"></script>
 </body>
 </html>
