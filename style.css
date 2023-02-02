@@ -19,6 +19,7 @@ body{
 
 .display{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 450px;
     height: 75px;     
@@ -26,10 +27,12 @@ body{
 
 .screen{
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     width: 450px;
-    height:125px;
+    height:100px;
     background-color: lightblue;
     border-radius: 50px;
 }
@@ -69,6 +72,10 @@ button#del{
 h5{
     padding-left: 15px;
     color: white;
+}
+
+#operand{
+    color: black;
 }
 /*
 .display{

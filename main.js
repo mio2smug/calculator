@@ -5,23 +5,34 @@ let userInputToInt;
 let userInputToFloat;
 let isUserInputFloat = false;
 let initialOperator ;
-let subsequentOperator ; 
+let subsequentOperator ;
+let counter = 0;
 
 function removeall(){
     userInput.splice(0, userInput.length);
     document.getElementById("number").innerHTML = userInput.join('');
+    document.getElementById("neg").disabled = false;
+    document.getElementById("float").disabled = false;
+    initialOperator = 0;
+    subsequentOperator = 0;
+    counter = 0;
+    document.getElementById("operand").innerHTML = "";
 }
 
 function enter(){
+    counter++;
     if (isUserInputFloat){
         initialOperator = userInputToFloat;
+        document.getElementById("operand").innerHTML = initialOperator;
         userInput.splice(0, userInput.length);
         document.getElementById("number").innerHTML = userInput.join('');
         return 0;
     }
     initialOperator = userInputToInt;
+    document.getElementById("operand").innerHTML = initialOperator;
     userInput.splice(0, userInput.length);
     document.getElementById("number").innerHTML =  userInput.join('');
+    console.log(counter);
     return 0;
 }
 
