@@ -61,23 +61,30 @@ function where it will set our initial Operator. Lets test using console log = W
 
 */
 
-function add(){
-    if (counter === 0){ enter();return 0;}
-    setContinuous();
-    document.getElementById("number").innerHTML = addition(initialOperand,subsequentOperand);
-    
-}
 
 function enter(){
     if (counter === 0){ set(); return 0;}
-    else{
+    else if (counter === 1){
+        setContinuous();
+        console.log("first else if");
+    }else{
+        console.log("else")
+        initialOperand = subsequentOperand;
         setContinuous();
     }
 }
 
 function setContinuous(){
-    if (isUserInputFloat){subsequentOperand = userInputToFloat; return 0;}
+    if (isUserInputFloat){
+        subsequentOperand = userInputToFloat; 
+        userInput.splice(0, userInput.length);
+        counter++
+        return 0;
+    }
     subsequentOperand = userInputToInt;
+    userInput.splice(0, userInput.length);
+    counter++
+    console.log(initialOperand,subsequentOperand);
     return 0;
 }
 
@@ -94,6 +101,7 @@ function set (){
     document.getElementById("operand").innerHTML = initialOperand;
     userInput.splice(0, userInput.length);
     document.getElementById("number").innerHTML =  userInput.join('');
+    console.log(initialOperand, subsequentOperand);
     counter++
     return 0;
 }
