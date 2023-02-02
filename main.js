@@ -6,8 +6,8 @@ let userInputToInt;
 let userInputToFloat;
 let isUserInputFloat = false;
 let initialOperand ;
-let subsequentOperand ;
-let symbol = "";
+let subsequentOperand = 0;
+let total ;
 let counter = 0;
 
 /*function add(){
@@ -60,6 +60,23 @@ function where it will set our initial Operator. Lets test using console log = W
 
 
 */
+function add(){
+     if (counter === 0){enter(); return 0;} 
+     else if (counter ===1){
+        enter(); 
+        total = addition(initialOperand, subsequentOperand);
+        document.getElementById("operand").innerHTML = total;
+        document.getElementById("number").innerHTML = "";
+        console.log(initialOperand);
+        return 0}
+     else {
+        enter();
+        total = addition(initialOperand, subsequentOperand);
+        document.getElementById("operand").innerHTML = total;
+        document.getElementById("number").innerHTML = "";
+        return 0;
+     }
+}
 
 
 function enter(){
@@ -68,8 +85,8 @@ function enter(){
         setContinuous();
         console.log("first else if");
     }else{
+        initialOperand = total;
         console.log("else")
-        initialOperand = subsequentOperand;
         setContinuous();
     }
 }
