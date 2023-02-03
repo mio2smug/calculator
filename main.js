@@ -10,56 +10,7 @@ let subsequentOperand = 0;
 let total ;
 let counter = 0;
 
-/*function add(){
-    if (isUserInputFloat) {initialOperator = userInputToFloat;}
-    if (!isUserInputFloat) {initialOperator = userInputToInt;}
-    symbol = "+"
-    console.log(addition(initialOperator, 2.1 ));
-}
-
-function subtract(){
-    symbol = "-"
-    console.log(symbol);
-}
-
-function multiply(){
-    symbol = "*"
-    console.log(symbol);
-}
-
-function divide(){
-    symbol = "/"
-    console.log(symbol);
-}*/
-
-
-
-/*What should happen when this function calls?
-user has already inputed a number
-when user presses enter
-
-*/
-
-/*function enter(){
-     (isUserInputFloat){
-        initialOperand = userInputToFloat;
-        document.getElementById("operand").innerHTML = initialOperand;
-        userInput.splice(0, userInput.length);
-        document.getElementById("number").innerHTML = userInput.join('');
-        return 0;
-    }
-    initialOperand = userInputToInt;
-    document.getElementById("operand").innerHTML = initialOperand;
-    userInput.splice(0, userInput.length);
-    document.getElementById("number").innerHTML =  userInput.join('');
-    return 0;
-}*/
-
-/*when user enters, counter will be at 0 by default, this means that it will go to set
-function where it will set our initial Operator. Lets test using console log = Working.
-
-
-*/
+/*
 function add(){
      if (counter === 0){enter(); return 0;} 
      else if (counter ===1){
@@ -140,8 +91,33 @@ function removeall(){
 function remove(){
     userInput.pop();
     display();
+} */
+
+function display(){
+   if(isUserInputFloat){document.getElementById("number").innerHTML = userInputToFloat;return 0;} 
+   else{
+    document.getElementById("number").innerHTML = userInputToInt;
+    return 0;
+    }
 }
 
+
+function pushOne(){
+    userInput.push("1");
+    typeConversion();
+    console.log("pause");
+    display();
+}
+
+function typeConversion(){
+    userInputToString = userInput.join('');
+    
+    userInputToInt = parseInt(userInputToString);
+    console.log(typeof userInputToInt);
+}
+
+
+/*
 function pushNegative(){
     userInput.push('-');
     document.getElementById("neg").disabled = "disabled";
@@ -153,12 +129,10 @@ function pushPeriod(){
     document.getElementById("float").disabled = "disabled";
     isUserInputFloat = true;
     display();
-}
+}*/
 
-function pushOne(){
-    userInput.push("1");
-    display();
-}
+
+/*
 
 function pushTwo(){
     userInput.push("2");
@@ -205,19 +179,6 @@ function pushZero(){
     display();
 }
 
-function display(){
-    userInputToString = userInput.join('');
-   if(isUserInputFloat){
-        userInputToFloat = parseFloat(userInputToString)
-       document.getElementById("number").innerHTML = userInputToFloat;
-        console.log("Here we are");
-        return 0;
-    } else{
-    userInputToInt = parseInt(userInputToString);
-    document.getElementById("number").innerHTML = userInputToInt;
-    console.log("hello");
-    return 0;}
-}
 
 function addition(x,y){
     return x+y;
@@ -235,3 +196,4 @@ function division (x,y){
     return x/y;
 }
 
+*/
