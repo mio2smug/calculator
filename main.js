@@ -104,18 +104,17 @@ function display(){
 
 function add(){
     symbol = "+";
-    if (counter === 0){
-    enter(); return 0;}
+    if (counter === 0){enter(); return 0;}
     enter();
+    total = addition(initialOperand,subsequentOperand);
+    document.getElementById("number").innerHTML = total;
+    
 }
 
 function enter(){
-
     if (counter === 0){
     setInitialOperand();
     reset();
-    /*document.getElementById("operand").innerHTML = initialOperand;
-    document.getElementById("number").innerHTML = "";*/
     console.log(initialOperand, subsequentOperand);
     counter++;
     return 0;} 
@@ -128,15 +127,15 @@ function enter(){
     }
 
     else{
-        setInitialToSubsequent();
+        setInitialToSubsequent(total);
         setSubsequentOperand();
         reset();
         console.log(initialOperand, subsequentOperand);
     }
 }
 
-function setInitialToSubsequent(){
-    initialOperand = subsequentOperand;
+function setInitialToSubsequent(x){
+    initialOperand = x;
 }
 
 function addition(x,y){
