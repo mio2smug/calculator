@@ -100,22 +100,43 @@ function display(){
     return 0;
     }
 }
+function enter(){
+    setInitialOperand();
+    reset();
+    document.getElementById("operand").innerHTML = initialOperand;
+    document.getElementById("number").innerHTML = "";
+}
 
+function reset(){
+    userInput.splice(0, userInput.length);
+}
+
+
+function setInitialOperand(){
+    initialOperand = userInputToInt;
+}
 
 function pushOne(){
     userInput.push("1");
     typeConversion();
-    console.log("pause");
     display();
 }
 
 function typeConversion(){
     userInputToString = userInput.join('');
-    
-    userInputToInt = parseInt(userInputToString);
-    console.log(typeof userInputToInt);
+    if (!isUserInputFloat){ setUserInputToFloat();}
+    setUserInputToInt();
 }
 
+function setUserInputToInt(){
+    userInputToInt = parseInt(userInputToString);
+    return 0;
+}
+
+function setUserInputToFloat(){
+    userInputToFloat = parseFloat(userInputToString);
+    return 0 ;
+}
 
 /*
 function pushNegative(){
