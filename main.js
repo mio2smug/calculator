@@ -107,8 +107,6 @@ function add(){
     if (counter === 0){
     enter(); return 0;}
     enter();
-    document.getElementById("operand").innerHTML = addition(initialOperand,subsequentOperand);
-    return 0;
 }
 
 function enter(){
@@ -116,15 +114,29 @@ function enter(){
     if (counter === 0){
     setInitialOperand();
     reset();
-    document.getElementById("operand").innerHTML = initialOperand;
-    document.getElementById("number").innerHTML = "";
+    /*document.getElementById("operand").innerHTML = initialOperand;
+    document.getElementById("number").innerHTML = "";*/
+    console.log(initialOperand, subsequentOperand);
     counter++;
     return 0;} 
     
-    else{
+    else if (counter === 1){
     setSubsequentOperand();
     reset();
+    console.log(initialOperand, subsequentOperand);
+    counter++;
     }
+
+    else{
+        setInitialToSubsequent();
+        setSubsequentOperand();
+        reset();
+        console.log(initialOperand, subsequentOperand);
+    }
+}
+
+function setInitialToSubsequent(){
+    initialOperand = subsequentOperand;
 }
 
 function addition(x,y){
