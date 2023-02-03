@@ -1,6 +1,7 @@
 //Let user input equal an array
 let userInput = [];
 let prevuserInputs = [];
+let symbol = "";
 let userInputToString;
 let userInputToInt;
 let userInputToFloat;
@@ -100,17 +101,43 @@ function display(){
     return 0;
     }
 }
+
+function add(){
+    symbol = "+";
+    if (counter === 0){
+    enter(); return 0;}
+    enter();
+    document.getElementById("operand").innerHTML = addition(initialOperand,subsequentOperand);
+    return 0;
+}
+
 function enter(){
+
+    if (counter === 0){
     setInitialOperand();
     reset();
     document.getElementById("operand").innerHTML = initialOperand;
     document.getElementById("number").innerHTML = "";
+    counter++;
+    return 0;} 
+    
+    else{
+    setSubsequentOperand();
+    reset();
+    }
+}
+
+function addition(x,y){
+    return x+y;
+}
+
+function setSubsequentOperand(){
+    subsequentOperand = userInputToInt;
 }
 
 function reset(){
     userInput.splice(0, userInput.length);
 }
-
 
 function setInitialOperand(){
     initialOperand = userInputToInt;
