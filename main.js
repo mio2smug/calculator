@@ -122,7 +122,7 @@ function enter(){
     else if (counter === 1){
     setSubsequentOperand();
     reset();
-    console.log(initialOperand, subsequentOperand);
+    console.log("Am I showing?");
     counter++;
     }
 
