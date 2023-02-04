@@ -126,6 +126,35 @@ function enter(){
     }
 }*/
 
+function add(){
+    symbol = "+";
+    document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
+}
+
+function enter(){
+    if (counter === 0){
+    setInitialOperand();
+    document.getElementById("operand").innerHTML = initialOperand;
+    reset();
+    document.getElementById("number").innerHTML = "";
+    counter++
+    } else {
+        setSubsequentOperand();
+        evaluate(symbol);
+        document.getElementById("operand").innerHTML = "";
+        document.getElementById("number").innerHTML = total;
+        setInitialToTotal();
+        reset();
+    }
+}
+
+function evaluate(symbol){
+    if(symbol === "+"){total = addition(initialOperand,subsequentOperand);}
+}
+
+function setInitialToTotal(){
+    initialOperand = total;
+}
 
 function display(){
    if(isUserInputFloat){document.getElementById("number").innerHTML = userInputToFloat;return 0;} 
@@ -140,11 +169,12 @@ function addition(x,y){
 }
 
 function setSubsequentOperand(){
-    subsequentOperand = userInputToInt;
+    subsequentOperand = userInputToInt;;
 }
 
 function reset(){
     userInput.splice(0, userInput.length);
+    userInputToInt = 0;
 }
 
 function setInitialOperand(){
