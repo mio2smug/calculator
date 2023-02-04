@@ -94,15 +94,7 @@ function remove(){
     display();
 } */
 
-function display(){
-   if(isUserInputFloat){document.getElementById("number").innerHTML = userInputToFloat;return 0;} 
-   else{
-    document.getElementById("number").innerHTML = userInputToInt;
-    return 0;
-    }
-}
-
-function add(){
+/*function add(){
     symbol = "+";
     if (counter === 0){enter(); return 0;}
     enter();
@@ -112,7 +104,7 @@ function add(){
 }
 
 function enter(){
-    if (counter === 0){
+    /*if (counter === 0){
     setInitialOperand();
     reset();
     console.log(initialOperand, subsequentOperand);
@@ -132,10 +124,15 @@ function enter(){
         reset();
         console.log(initialOperand, subsequentOperand);
     }
-}
+}*/
 
-function setInitialToSubsequent(x){
-    initialOperand = x;
+
+function display(){
+   if(isUserInputFloat){document.getElementById("number").innerHTML = userInputToFloat;return 0;} 
+   else{
+    document.getElementById("number").innerHTML = userInputToInt;
+    return 0;
+    }
 }
 
 function addition(x,y){
