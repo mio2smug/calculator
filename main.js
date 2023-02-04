@@ -129,6 +129,7 @@ function enter(){
 function add(){
     symbol = "+";
     document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
+    document.getElementById("number").innerHTML = "";
 }
 
 function enter(){
@@ -166,6 +167,18 @@ function display(){
 
 function addition(x,y){
     return x+y;
+}
+
+function subtraction(x,y){
+    return x - y;
+}
+
+function multiplication (x,y){
+    return x*y;
+}
+
+function division (x,y){
+    return x/y;
 }
 
 function setSubsequentOperand(){
