@@ -12,70 +12,6 @@ let total ;
 let counter = 0;
 
 /*
-function add(){
-     if (counter === 0){enter(); return 0;} 
-     else if (counter ===1){
-        enter(); 
-        total = addition(initialOperand, subsequentOperand);
-        document.getElementById("operand").innerHTML = total;
-        document.getElementById("number").innerHTML = "";
-        console.log(initialOperand);
-        return 0}
-     else {
-        enter();
-        total = addition(initialOperand, subsequentOperand);
-        document.getElementById("operand").innerHTML = total;
-        document.getElementById("number").innerHTML = "";
-        return 0;
-     }
-}
-
-
-function enter(){
-    if (counter === 0){ set(); return 0;}
-    else if (counter === 1){
-        setContinuous();
-        console.log("first else if");
-    }else{
-        initialOperand = total;
-        console.log("else")
-        setContinuous();
-    }
-}
-
-function setContinuous(){
-    if (isUserInputFloat){
-        subsequentOperand = userInputToFloat; 
-        userInput.splice(0, userInput.length);
-        counter++
-        return 0;
-    }
-    subsequentOperand = userInputToInt;
-    userInput.splice(0, userInput.length);
-    counter++
-    console.log(initialOperand,subsequentOperand);
-    return 0;
-}
-
-function set (){
-    if (isUserInputFloat){ 
-        initialOperand = userInputToFloat; 
-        document.getElementById("operand").innerHTML = initialOperand;
-        userInput.splice(0, userInput.length);
-        document.getElementById("number").innerHTML =  userInput.join('');
-        counter++;
-        return 0;
-    }
-    initialOperand = userInputToInt; 
-    document.getElementById("operand").innerHTML = initialOperand;
-    userInput.splice(0, userInput.length);
-    document.getElementById("number").innerHTML =  userInput.join('');
-    console.log(initialOperand, subsequentOperand);
-    counter++
-    return 0;
-}
-
-
 
 function removeall(){
     userInput.splice(0, userInput.length);
@@ -89,42 +25,13 @@ function removeall(){
     document.getElementById("operand").innerHTML = "";
 }
 
+*/
+
 function remove(){
     userInput.pop();
+    typeConversion();
     display();
-} */
-
-/*function add(){
-    symbol = "+";
-    if (counter === 0){enter(); return 0;}
-    enter();
-    total = addition(initialOperand,subsequentOperand);
-    document.getElementById("number").innerHTML = total;
-    
 }
-
-function enter(){
-    /*if (counter === 0){
-    setInitialOperand();
-    reset();
-    console.log(initialOperand, subsequentOperand);
-    counter++;
-    return 0;} 
-    
-    else if (counter === 1){
-    setSubsequentOperand();
-    reset();
-    console.log("Am I showing?");
-    counter++;
-    }
-
-    else{
-        setInitialToSubsequent(total);
-        setSubsequentOperand();
-        reset();
-        console.log(initialOperand, subsequentOperand);
-    }
-}*/
 
 function add(){
     symbol = "+";
@@ -134,6 +41,18 @@ function add(){
 
 function subtract(){
     symbol = "-";
+    document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
+    document.getElementById("number").innerHTML = "";
+}
+
+function multiply(){
+    symbol = "*";
+    document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
+    document.getElementById("number").innerHTML = "";
+}
+
+function divide(){
+    symbol = "÷";
     document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
     document.getElementById("number").innerHTML = "";
 }
@@ -160,7 +79,11 @@ function evaluate(symbol){
         total = addition(initialOperand,subsequentOperand);
     } else if (symbol === "-"){
         total = subtraction(initialOperand,subsequentOperand);
-    }
+    } else if (symbol === "*"){
+        total = multiplication(initialOperand, subsequentOperand);
+    } else if (symbol === "÷"){
+        total = division(initialOperand, subsequentOperand);
+    } else{return 0;}
 }
 
 function setInitialToTotal(){
@@ -210,6 +133,60 @@ function pushOne(){
     display();
 }
 
+function pushTwo(){
+    userInput.push("2");
+    typeConversion();
+    display();
+}
+
+function pushThree(){
+    userInput.push("3");
+    typeConversion();
+    display();
+}
+
+function pushFour(){
+    userInput.push("4");
+    typeConversion();
+    display();
+}
+
+function pushFive(){
+    userInput.push("5");
+    typeConversion();
+    display();
+}
+
+function pushSix(){
+    userInput.push("6");
+    typeConversion();
+    display();
+}
+
+function pushSeven(){
+    userInput.push("7");
+    typeConversion();
+    display();
+}
+
+function pushEight(){
+    userInput.push("8");
+    typeConversion();
+    display();
+}
+
+function pushNine(){
+    userInput.push("9");
+    typeConversion();
+    display();
+}
+
+function pushZero(){
+    userInput.push("0");
+    typeConversion();
+    display();
+}
+
 function typeConversion(){
     userInputToString = userInput.join('');
     if (!isUserInputFloat){ setUserInputToFloat();}
@@ -240,69 +217,3 @@ function pushPeriod(){
     display();
 }*/
 
-
-/*
-
-function pushTwo(){
-    userInput.push("2");
-    display();
-}
-
-function pushThree(){
-    userInput.push("3");
-    display();
-}
-
-function pushFour(){
-    userInput.push("4");
-    display();
-}
-
-function pushFive(){
-    userInput.push("5");
-    display();
-}
-
-function pushSix(){
-    userInput.push("6");
-    display();
-}
-
-function pushSeven(){
-    userInput.push("7");
-    display();
-}
-
-function pushEight(){
-    userInput.push("8");
-    display();
-}
-
-function pushNine(){
-    userInput.push("9");
-    display();
-}
-
-function pushZero(){
-    userInput.push("0");
-    display();
-}
-
-
-function addition(x,y){
-    return x+y;
-}
-
-function subtraction(x,y){
-    return x - y;
-}
-
-function multiplication (x,y){
-    return x*y;
-}
-
-function division (x,y){
-    return x/y;
-}
-
-*/
