@@ -11,7 +11,6 @@ let subsequentOperand = 0;
 let total ;
 let counter = 0;
 
-/*
 
 function removeall(){
     userInput.splice(0, userInput.length);
@@ -22,10 +21,16 @@ function removeall(){
     initialOperand = 0;
     subsequentOperand = 0;
     counter = 0;
+    total = 0;
     document.getElementById("operand").innerHTML = "";
 }
 
-*/
+function pushNegative(){
+    userInput.push('-');
+    document.getElementById("neg").disabled = "disabled";
+    typeConversion();
+    display();
+}
 
 function remove(){
     userInput.pop();
@@ -204,16 +209,12 @@ function setUserInputToFloat(){
 }
 
 /*
-function pushNegative(){
-    userInput.push('-');
-    document.getElementById("neg").disabled = "disabled";
-    display();
-}
 
 function pushPeriod(){
     userInput.push('.');
     document.getElementById("float").disabled = "disabled";
     isUserInputFloat = true;
     display();
-}*/
+}
+*/
 
