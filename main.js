@@ -132,6 +132,12 @@ function add(){
     document.getElementById("number").innerHTML = "";
 }
 
+function subtract(){
+    symbol = "-";
+    document.getElementById("operand").innerHTML = initialOperand + " " + symbol;
+    document.getElementById("number").innerHTML = "";
+}
+
 function enter(){
     if (counter === 0){
     setInitialOperand();
@@ -150,7 +156,11 @@ function enter(){
 }
 
 function evaluate(symbol){
-    if(symbol === "+"){total = addition(initialOperand,subsequentOperand);}
+    if(symbol === "+"){
+        total = addition(initialOperand,subsequentOperand);
+    } else if (symbol === "-"){
+        total = subtraction(initialOperand,subsequentOperand);
+    }
 }
 
 function setInitialToTotal(){
