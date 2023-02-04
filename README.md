@@ -9,7 +9,7 @@ The way this calculator works is as following.
 -enter function behavior sets second user input as our secondary operand, evaluates, returns result, sets total as our initial operator, then wipes the current user input to make room for a new one in case user wants to chain a series of mathematical problems.
 
 Unintended consequences:
-Program is very verbose. Can definitely be shortened.
+Program is very verbose. Can definitely be shortened. While looking at other peoples solution their knowledge of DOM control allows them for shorter code. 
 Program only works with the following order: [input] enter operator [input] enter operator [input] enter operator [input]...
 
 pros:
@@ -20,4 +20,4 @@ Next update:
 -Typing this out I've noticed how to potentially fix the specific order problem. If  [userInput] operator [userInput] operator we could set the first action of the operator onClick function to call the enter function so we may have:
 
         [userInput]  *enter called by operator* operator [userInput]...
-        
+-APply the float functionality
